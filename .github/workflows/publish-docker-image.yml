@@ -1,33 +1,30 @@
-name: Publish Docker image
+name: Publish Docker image to GitHub Packages
 
 on:
   release:
     types: [published]
 
 jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
+  push_to_github_packages:
+    name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-      attestations: write
-      id-token: write
+
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Log in to Docker Hub
+      - name: Log in to GitHub Packages
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: mozeeza/health-center
+          images: ghcr.io/${{ github.repository_owner }}/health-center
 
       - name: Build and push Docker image
         id: push
@@ -42,6 +39,6 @@ jobs:
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
         with:
-          subject-name: ${{ steps.meta.outputs.image }}
+          subject-name: ghcr.io/${{ github.repository_owner }}/health-center
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
