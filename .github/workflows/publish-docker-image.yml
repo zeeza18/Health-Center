@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag mozeeza/health-center:${latest}
+        run: docker build . --file Dockerfile --tag mozeeza/health-center:latest
 
       - name: Push the Docker image
-        run: docker push mozeeza/health-center:${latest}
+        run: docker push mozeeza/health-center:latest
