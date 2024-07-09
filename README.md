@@ -53,21 +53,18 @@ Health Center offers a range of features designed to empower users with knowledg
 
 ## Technologies Used
 
-- **Python 3.8** 
-- **Flask** 
-- **Bootstrap** 
-- **Pandas** 
-- **scikit-learn** 
-- **NumPy** 
+- **Python 3.8** ![Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+- **Flask** ![Flask](https://flask.palletsprojects.com/en/2.0.x/_images/flask-logo.png)
+- **Bootstrap** ![Bootstrap](https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo-shadow.png)
+- **Pandas** ![Pandas](https://pandas.pydata.org/static/img/pandas_white.svg)
+- **scikit-learn** ![scikit-learn](https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png)
+- **NumPy** ![NumPy](https://numpy.org/images/logos/numpy/numpy.svg)
 
 ## Project Images
 
 ![Screenshot 1](uploads/image1.png)
-
 ![Screenshot 2](uploads/image2.png)
-
 ![Screenshot 3](uploads/image3.png)
-
 ![Screenshot 4](uploads/image4.png)
 
 ## Acknowledgment
