@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      IMAGE_TAG: ${{ github.sha }}
+      latest: ${{ github.sha }}
 
     steps:
       - name: Check out the repository
@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag mozeeza/health-center:${IMAGE_TAG}
+        run: docker build . --file Dockerfile --tag mozeeza/health-center:${latest}
 
       - name: Push the Docker image
-        run: docker push mozeeza/health-center:${IMAGE_TAG}
+        run: docker push mozeeza/health-center:${latest}
