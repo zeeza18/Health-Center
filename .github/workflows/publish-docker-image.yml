@@ -1,11 +1,9 @@
 name: Create and publish a Docker image
 
-# Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
     branches: ['release']
 
-# Defines custom environment variables for the workflow.
 env:
   REGISTRY: docker.io
   IMAGE_NAME: mozeeza/health-center
@@ -14,7 +12,6 @@ jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
 
-    # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
     permissions:
       contents: read
       packages: write
@@ -42,8 +39,8 @@ jobs:
         id: push
         uses: docker/build-push-action@v3
         with:
-          context: .
-          file: Dockerfile
+          context: ${{ github.workspace }}
+          file: ${{ github.workspace }}/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
