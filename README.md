@@ -1,6 +1,6 @@
 # Health Center
 
-Welcome to the Health Center project, an innovative platform that harnesses the power of AI and machine learning to enhance healthcare accessibility and provide personalized medical recommendations. This project aims to revolutionize the way individuals manage their health by offering a user-friendly interface for uploading medical documents and receiving tailored advice.
+Welcome to the Health Center project, an innovative platform that harnesses the power of AI and machine learning to enhance healthcare accessibility and provide personalized medical recommendations. This project aims to revolutionize the way individuals manage their health by offering a user-friendly interface for uploading medical documents and receiving tailored advice. check
 
 ## Table of Contents
 
